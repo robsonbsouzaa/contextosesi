@@ -23,6 +23,16 @@
             width: 100%;
             max-width: 400px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .input-area {
+            position: sticky;
+            top: 0;
+            background: #121213;
+            padding: 10px;
+            width: 100%;
+            z-index: 10;
         }
         input {
             font-size: 18px;
@@ -48,10 +58,15 @@
         button:hover {
             background-color: #3a6e36;
         }
+        .list-container {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
         ul {
             list-style: none;
             padding: 0;
-            margin-top: 20px;
+            margin: 0;
             width: 100%;
             max-width: 400px;
         }
@@ -73,10 +88,14 @@
 <body>
     <div class="container">
         <h1>Contexto</h1>
-        <input type="text" id="guessInput" placeholder="Digite uma palavra">
-        <button onclick="checkWord()">Tentar</button>
-        <p id="message"></p>
-        <ul id="attempts"></ul>
+        <div class="input-area">
+            <input type="text" id="guessInput" placeholder="Digite uma palavra">
+            <button onclick="checkWord()">Tentar</button>
+            <p id="message"></p>
+        </div>
+        <div class="list-container">
+            <ul id="attempts"></ul>
+        </div>
     </div>
 
     <script>
